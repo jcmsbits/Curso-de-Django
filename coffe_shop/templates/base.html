@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Coffee shop</title>
+        
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        {%if user.is_authenticated%}
+        Hola, {{user.username}}.
+        <br>
+        <form action = "{%url "logout"%}" method = "post">
+            {%csrf_token%}            
+            <button 
+            class="group inline-block rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"
+            type = "Submit">Cerrar Sesión</button>
+        </form>
+        {%else%}
+        <a href = "{%url "login"%}">Login</a>
+        {%endif%}
+        <div class = "container mx-auto px-4">
+      
+            {% block content%}
+
+            {% endblock content%}               
+        </div>
+    </body>    
+    <footer>
+    </footer>
+
+</html>
