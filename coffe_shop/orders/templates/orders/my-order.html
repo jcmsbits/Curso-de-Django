@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %} 
+Estamos dentro
+{{order.user.username}}
+{{order.order_date | date}}
+
+{% for product_order in order.orderproduct_set.all%}
+{{ product_order.product.name}}
+<br>
+{{ product_order.product.price}}
+<br>
+{{ product_order.quantity}}
+
+{%empty%}
+No hay items en tu orden
+{% endfor%}
+
+
+
+{% endblock content %}

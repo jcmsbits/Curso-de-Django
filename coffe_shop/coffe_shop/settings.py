@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_tailwind",
     'products',
-    'user'
+    'user',
+    'orders'
 ]
 
 MIDDLEWARE = [
@@ -136,6 +137,11 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 
 CRISPY_TEMPLATE_PACK = "tailwind"
 
+LOGIN_URL = 'login'
+
 LOGIN_REDIRECT_URL = 'listado'
 
-LOGOUT_REDIRECT_URL = "listado"
+LOGOUT_REDIRECT_URL = 'listado'
+
+
+
